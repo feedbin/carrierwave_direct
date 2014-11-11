@@ -2,7 +2,10 @@
 
 require "carrierwave"
 require "uuidtools"
-require "fog"
+begin
+  require "fog" unless defined?(::Fog)
+rescue LoadError
+end
 
 module CarrierWaveDirect
 
